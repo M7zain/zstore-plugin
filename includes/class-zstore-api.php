@@ -61,6 +61,9 @@ class Zstore_API {
             // Get all slides
             $slides = $this->slides->get_slides();
             
+            // Debug: Log the settings
+            error_log('ZStore API Settings: ' . print_r($settings, true));
+            
             // Combine settings and slides
             $response = array(
                 'success' => true,

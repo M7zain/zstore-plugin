@@ -30,6 +30,20 @@
                         </td>
                     </tr>
                     <tr>
+                        <th><label for="test_1">Test Field 1</label></th>
+                        <td>
+                            <input type="text" id="test_1" name="test_1" class="regular-text" 
+                                value="<?php echo esc_attr($settings['test_1'] ?? ''); ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="test_2">Test Field 2</label></th>
+                        <td>
+                            <input type="text" id="test_2" name="test_2" class="regular-text" 
+                                value="<?php echo esc_attr($settings['test_2'] ?? ''); ?>">
+                        </td>
+                    </tr>
+                    <tr>
                         <th><label>Store Logo</label></th>
                         <td>
                             <div class="logo-upload">

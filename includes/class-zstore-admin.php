@@ -164,6 +164,14 @@ class Zstore_Admin {
             $sanitized['logo_url'] = esc_url_raw($settings['logo_url']);
         }
         
+        if (isset($settings['test_1'])) {
+            $sanitized['test_1'] = sanitize_text_field($settings['test_1']);
+        }
+        
+        if (isset($settings['test_2'])) {
+            $sanitized['test_2'] = sanitize_text_field($settings['test_2']);
+        }
+        
         if (isset($settings['theme']['colors'])) {
             $sanitized['theme']['colors'] = array(
                 'primary' => sanitize_hex_color($settings['theme']['colors']['primary']),
@@ -199,6 +207,23 @@ class Zstore_Admin {
         $result = $this->settings->update_setting('store_settings', $sanitized);
         
         if ($result) {
+            // Clear all caches
+            if (function_exists('litespeed_purge_all')) {
+                litespeed_purge_all();
+            }
+            
+            if (function_exists('w3tc_flush_all')) {
+                w3tc_flush_all();
+            }
+            
+            if (function_exists('wp_cache_clear_cache')) {
+                wp_cache_clear_cache();
+            }
+            
+            if (function_exists('rocket_clean_domain')) {
+                rocket_clean_domain();
+            }
+            
             wp_send_json_success();
         } else {
             wp_send_json_error('Failed to save settings');

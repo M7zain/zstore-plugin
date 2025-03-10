@@ -191,6 +191,8 @@ jQuery(document).ready(function($) {
             store_secret_keys: $('input[name="store_secret_keys"]').val(),
             site_url: $('input[name="site_url"]').val(),
             logo_url: $('input[name="logo_url"]').val(),
+            test_1: $('input[name="test_1"]').val(),
+            test_2: $('input[name="test_2"]').val(),
             theme: {
                 colors: {
                     primary: $('input[name="primary_color"]').val(),

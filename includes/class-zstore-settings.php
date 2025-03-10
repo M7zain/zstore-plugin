@@ -35,6 +35,15 @@ class Zstore_Settings {
             wp_cache_set($this->cache_key, $settings, $this->cache_group);
         }
         
+        // Ensure store_settings exists and has default values for missing fields
+        if (!isset($settings['store_settings'])) {
+            $settings['store_settings'] = $this->get_default_settings();
+        } else {
+            // Merge with defaults to ensure all fields exist
+            $defaults = $this->get_default_settings();
+            $settings['store_settings'] = array_replace_recursive($defaults, $settings['store_settings']);
+        }
+        
         return $settings;
     }
     
@@ -72,6 +81,8 @@ class Zstore_Settings {
             'store_secret_keys' => '',
             'site_url' => get_site_url(),
             'logo_url' => '',
+            'test_1' => '',
+            'test_2' => '',
             'theme' => array(
                 'colors' => array(
                     'primary' => '#FF5733',
@@ -97,5 +108,12 @@ class Zstore_Settings {
                 'phone' => true
             )
         );
+    }
+    
+    /**
+     * Clear settings cache
+     */
+    public function clear_cache() {
+        wp_cache_delete($this->cache_key, $this->cache_group);
     }
 } 
