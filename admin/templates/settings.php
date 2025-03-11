@@ -30,6 +30,56 @@
                         </td>
                     </tr>
                     <tr>
+                        <th><label for="woocommerce_key">Woocommerce Key</label></th>
+                        <td>
+                            <input type="text" id="woocommerce_key" name="woocommerce_key" class="regular-text" 
+                                value="<?php echo esc_attr($settings['store_settings']['woocommerce_key'] ?? ''); ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="woocommerce_secret">Woocommerce Secret</label></th>
+                        <td>
+                            <input type="text" id="woocommerce_secret" name="woocommerce_secret" class="regular-text" 
+                                value="<?php echo esc_attr($settings['store_settings']['woocommerce_secret'] ?? ''); ?>">
+                        </td>
+                    </tr>
+
+                    <!-- Address field -->
+                    <tr>
+                        <th><label for="address">Address</label></th>
+                        <td>
+                            <input type="text" id="address" name="address" class="regular-text" 
+                                value="<?php echo esc_attr($settings['store_settings']['address'] ?? ''); ?>">
+                        </td>
+                    </tr>
+
+                    <!-- Phone field -->
+                    <tr>
+                        <th><label for="phone">Phone</label></th>
+                        <td>
+                            <input type="text" id="phone" name="phone" class="regular-text" 
+                                value="<?php echo esc_attr($settings['store_settings']['phone'] ?? ''); ?>">
+                        </td>
+                    </tr>
+
+                    <!-- Whatsapp number field -->
+                    <tr>
+                        <th><label for="whatsapp_number">Whatsapp Number</label></th>
+                        <td>
+                            <input type="text" id="whatsapp_number" name="whatsapp_number" class="regular-text" 
+                                value="<?php echo esc_attr($settings['store_settings']['whatsapp_number'] ?? ''); ?>">
+                        </td>
+
+                    <!-- Privacy policy link field -->
+                    <tr>
+                        <th><label for="privacy_policy_link">Privacy Policy Link</label></th>
+                        <td>
+                            <input type="text" id="privacy_policy_link" name="privacy_policy_link" class="regular-text" 
+                                value="<?php echo esc_attr($settings['store_settings']['privacy_policy_link'] ?? ''); ?>">
+                        </td>
+                    </tr>
+
+                    <tr>
                         <th><label>Store Logo</label></th>
                         <td>
                             <div class="logo-upload">
