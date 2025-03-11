@@ -261,6 +261,23 @@ class Zstore_Admin {
         }
         
         if ($result) {
+            // Clear all caches
+            if (function_exists('litespeed_purge_all')) {
+                litespeed_purge_all();
+            }
+            
+            if (function_exists('w3tc_flush_all')) {
+                w3tc_flush_all();
+            }
+            
+            if (function_exists('wp_cache_clear_cache')) {
+                wp_cache_clear_cache();
+            }
+            
+            if (function_exists('rocket_clean_domain')) {
+                rocket_clean_domain();
+            }
+            
             wp_send_json_success();
         } else {
             wp_send_json_error('Failed to save settings');

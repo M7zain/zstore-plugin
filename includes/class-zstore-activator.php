@@ -22,7 +22,7 @@ class Zstore_Activator {
         ) $charset_collate;";
         
         // Create settings table
-        $settings_table = $wpdb->prefix . 'zstore_settings';
+        $settings_table = $wpdb->prefix . 'zstore_se`ttings';
         $settings_sql = "CREATE TABLE IF NOT EXISTS $settings_table (
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             setting_key varchar(191) NOT NULL,

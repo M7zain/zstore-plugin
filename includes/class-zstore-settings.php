@@ -142,11 +142,6 @@ class Zstore_Settings {
             'store_secret_keys' => '',
             'site_url' => get_site_url(),
             'logo_url' => '',
-            'woocommerce_key' => '',
-            'woocommerce_secret' => '',
-            'address' => '',
-            // I added the privacy policy link field and added it to the default settings
-            'privacy_policy_link' => '',
             'theme' => array(
                 'colors' => array(
                     'primary' => '#FF5733',

@@ -99,6 +99,9 @@ class Zstore_API {
                 return $slide;
             }, $slides);
             
+            // Debug: Log the settings
+            error_log('ZStore API Settings: ' . print_r($settings, true));
+            
             // Combine settings and slides
             $response = array(
                 'success' => true,

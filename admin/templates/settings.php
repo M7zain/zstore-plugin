@@ -69,6 +69,7 @@
                             <input type="text" id="whatsapp_number" name="whatsapp_number" class="regular-text" 
                                 value="<?php echo esc_attr($settings['store_settings']['whatsapp_number'] ?? ''); ?>">
                         </td>
+                    </tr>
 
                     <!-- Privacy policy link field -->
                     <tr>
